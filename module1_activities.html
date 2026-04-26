@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 1 — Profitable Idea & Audience Lock-In | StoryCraft AI Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D1B3E;
+    --gold: #F5A623;
+    --purple: #7B3FA0;
+    --blue: #2B7FD4;
+    --sky: #5BC8F5;
+    --pink: #E0407B;
+    --cream: #FFF9F0;
+    --white: #FFFFFF;
+    --soft-gray: #F4F6FA;
+    --text: #1A1A2E;
+    --muted: #6B7280;
+    --border: #E2E8F0;
+    --success: #10B981;
+    --radius: 16px;
+    --shadow: 0 4px 24px rgba(13,27,62,0.10);
+    --shadow-lg: 0 8px 40px rgba(13,27,62,0.16);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.65;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--navy);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 52px 32px 44px;
+    position: relative;
+    z-index: 2;
+  }
+  .brand-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245,166,35,0.15);
+    border: 1px solid rgba(245,166,35,0.3);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .brand-tag .dot {
+    width: 7px; height: 7px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50% { opacity:0.4; transform:scale(0.7); }
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 46px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .header h1 span { color: var(--gold); }
+  .header-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .meta-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 100px;
+    padding: 8px 18px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 500;
+  }
+  .meta-pill .icon { font-size: 15px; }
+  .header-deco {
+    position: absolute;
+    right: -60px; top: -60px;
+    width: 340px; height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(123,63,160,0.3) 0%, transparent 70%);
+    z-index: 1;
+  }
+  .header-deco2 {
+    position: absolute;
+    left: -40px; bottom: -80px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(43,127,212,0.2) 0%, transparent 70%);
+    z-index: 1;
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 32px 80px;
+  }
+
+  /* ── SECTION LABELS ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── OBJECTIVE CARD ── */
+  .objective-card {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a2f6e 100%);
+    border-radius: var(--radius);
+    padding: 32px 36px;
+    margin-bottom: 36px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+  }
+  .objective-card::before {
+    content: '🎯';
+    position: absolute;
+    right: 28px; top: 24px;
+    font-size: 48px;
+    opacity: 0.15;
+  }
+  .objective-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .objective-card p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+    max-width: 600px;
+  }
+  .outcome-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .chip {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 500;
+  }
+
+  /* ── ACTIVITY CARDS ── */
+  .activity-block {
+    margin-bottom: 40px;
+  }
+  .activity-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .activity-header {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .activity-number {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    flex-shrink: 0;
+    margin-right: 4px;
+    margin-top: 2px;
+  }
+  .a1 { background: linear-gradient(135deg, var(--purple), #9B5FBF); }
+  .a2 { background: linear-gradient(135deg, var(--blue), var(--sky)); }
+  .a3 { background: linear-gradient(135deg, var(--gold), #F7C547); }
+  .a4 { background: linear-gradient(135deg, var(--pink), #F06292); }
+  .a5 { background: linear-gradient(135deg, var(--success), #34D399); }
+
+  .activity-title-wrap { flex: 1; }
+  .activity-title-wrap h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .activity-title-wrap p {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .time-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--soft-gray);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--navy);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .time-badge .clock { font-size: 14px; }
+
+  .activity-body { padding: 28px; }
+
+  /* instruction blocks */
+  .instruction-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+    margin-top: 24px;
+  }
+  .instruction-label:first-child { margin-top: 0; }
+
+  .context-box {
+    background: var(--soft-gray);
+    border-left: 4px solid var(--purple);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+  .context-box.gold { border-color: var(--gold); }
+  .context-box.blue { border-color: var(--blue); }
+  .context-box.pink { border-color: var(--pink); }
+  .context-box.green { border-color: var(--success); }
+
+  /* step list */
+  .step-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .step-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .step-num {
+    width: 26px; height: 26px;
+    border-radius: 7px;
+    background: var(--navy);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* fill-in framework */
+  .fill-in {
+    background: var(--soft-gray);
+    border: 1.5px dashed var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 4px;
+  }
+  .fill-in .prompt {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .fill-line {
+    height: 36px;
+    border-bottom: 1.5px solid #CBD5E1;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .fill-line::before {
+    content: attr(data-label);
+    position: absolute;
+    top: 8px;
+    left: 4px;
+    font-size: 11px;
+    color: var(--muted);
+    font-style: italic;
+    pointer-events: none;
+  }
+  .fill-line:last-child { margin-bottom: 0; }
+
+  /* decision matrix */
+  .decision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .decision-cell {
+    background: var(--soft-gray);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .decision-cell .cell-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .decision-cell .cell-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cell-line {
+    height: 28px;
+    border-bottom: 1.5px solid #CBD5E1;
+  }
+
+  /* checklist */
+  .checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .checklist li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text);
+    padding: 10px 14px;
+    background: var(--soft-gray);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .checklist li:hover { border-color: var(--blue); background: #EFF6FF; }
+  .check-box {
+    width: 20px; height: 20px;
+    border: 2px solid var(--border);
+    border-radius: 5px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .checklist li:hover .check-box { border-color: var(--blue); }
+
+  /* validation table */
+  .val-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .val-table th {
+    background: var(--navy);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  .val-table th:first-child { border-radius: 8px 0 0 0; }
+  .val-table th:last-child { border-radius: 0 8px 0 0; }
+  .val-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .val-table tr:nth-child(even) td { background: var(--soft-gray); }
+  .val-table tr:last-child td { border-bottom: none; }
+  .val-table .signal {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .green-sig { background: #D1FAE5; color: #065F46; }
+  .red-sig { background: #FEE2E2; color: #991B1B; }
+  .yellow-sig { background: #FEF3C7; color: #92400E; }
+
+  /* idea pitch builder */
+  .pitch-builder {
+    background: linear-gradient(135deg, #f0f4ff 0%, #faf0ff 100%);
+    border: 1.5px solid rgba(123,63,160,0.2);
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .pitch-formula {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .formula-piece {
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--purple);
+  }
+  .formula-plus {
+    color: var(--muted);
+    font-weight: 400;
+    font-size: 18px;
+  }
+  .formula-equals {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .pitch-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .pitch-line-wrap label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .pitch-input-mock {
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+    min-height: 42px;
+  }
+
+  /* DELIVERABLE */
+  .deliverable-card {
+    background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    color: white;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 40px;
+  }
+  .deliverable-icon {
+    font-size: 44px;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .deliverable-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .deliverable-card p {
+    font-size: 14px;
+    opacity: 0.9;
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+  .deliverable-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .deliverable-checks span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .deliverable-checks span::before {
+    content: '✓';
+    width: 20px; height: 20px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  /* RULE CALLOUT */
+  .rule-callout {
+    background: #FFF7ED;
+    border: 1.5px solid #FED7AA;
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 13px;
+    color: #92400E;
+    line-height: 1.6;
+    margin-top: 16px;
+  }
+  .rule-callout .icon { font-size: 18px; flex-shrink: 0; }
+  .rule-callout strong { color: #78350F; display: block; margin-bottom: 3px; }
+
+  /* PROGRESS BAR */
+  .progress-bar-wrap {
+    background: rgba(255,255,255,0.1);
+    border-radius: 100px;
+    height: 6px;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    width: 14.3%;
+    background: linear-gradient(90deg, var(--gold), #F7C547);
+    border-radius: 100px;
+  }
+  .progress-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 6px;
+  }
+
+  /* divider */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 32px 0;
+  }
+
+  /* alert strip */
+  .alert-strip {
+    background: #FFF1F2;
+    border: 1.5px solid #FECDD3;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 13px;
+    color: #9F1239;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+  .alert-strip .icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .container { padding: 24px 18px 60px; }
+    .header-inner { padding: 36px 20px 32px; }
+    .activity-header { flex-wrap: wrap; }
+    .decision-grid { grid-template-columns: 1fr; }
+    .pitch-formula { flex-direction: column; }
+    .deliverable-card { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-deco"></div>
+  <div class="header-deco2"></div>
+  <div class="header-inner">
+    <div class="brand-tag"><span class="dot"></span> StoryCraft AI Academy</div>
+    <h1>Module 1 — Day 1<br><span>Profitable Idea &amp; Audience Lock-In</span></h1>
+    <div class="header-meta">
+      <div class="meta-pill"><span class="icon">⏱</span> 30–60 Min Total</div>
+      <div class="meta-pill"><span class="icon">📋</span> 5 Activities</div>
+      <div class="meta-pill"><span class="icon">🎯</span> 1 Validated Book Concept</div>
+      <div class="meta-pill"><span class="icon">⚡</span> No Prior Experience Required</div>
+    </div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill"></div>
+    </div>
+    <div class="progress-label">Day 1 of 7 — Course Progress: 14%</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <!-- OBJECTIVE -->
+  <div class="section-label">Module Overview</div>
+  <div class="objective-card">
+    <h2>Your Objective for Today</h2>
+    <p>By the end of this module, you will walk away with ONE fully defined, marketable children's book concept — complete with a target age range, emotional hook, category, and a 1–2 sentence pitch you could use to describe it to anyone.</p>
+    <div class="outcome-chips">
+      <div class="chip">✅ Age Group Locked</div>
+      <div class="chip">✅ Book Category Chosen</div>
+      <div class="chip">✅ Demand Validated</div>
+      <div class="chip">✅ Concept Pitch Written</div>
+      <div class="chip">✅ Only 1 Idea Moves Forward</div>
+    </div>
+  </div>
+
+  <!-- ────────────────────────────────────── -->
+  <!-- ACTIVITY 1 -->
+  <!-- ────────────────────────────────────── -->
+  <div class="section-label">Activity 1 of 5</div>
+  <div class="activity-block">
+    <div class="activity-card">
+      <div class="activity-header">
+        <div class="activity-number a1">01</div>
+        <div class="activity-title-wrap">
+          <h3>Define Your Exact Reader</h3>
+          <p>Lock in your target age group and understand exactly who you're writing for</p>
+        </div>
+        <div class="time-badge"><span class="clock">⏱</span> 10 Min</div>
+      </div>
+      <div class="activity-body">
+
+        <div class="instruction-label">Why This Matters</div>
+        <div class="context-box">
+          Children's books are not "for kids." They're for a very specific window of development. A book aimed at a 3-year-old looks, sounds, and reads completely differently than one for an 8-year-old. Choosing the wrong range means wrong vocabulary, wrong length, and wrong illustrations — making your book hard to sell.
+        </div>
+
+        <div class="instruction-label">Step-by-Step Instructions</div>
+        <ol class="step-list">
+          <li><span class="step-num">1</span><span>Read the three age ranges below carefully. Do not skip this.</span></li>
+          <li><span class="step-num">2</span><span>Circle or mark the age range that best fits the story idea forming in your head, OR the audience you most want to reach.</span></li>
+          <li><span class="step-num">3</span><span>Write down ONE deciding reason for your choice in the space provided.</span></li>
+        </ol>
+
+        <div class="instruction-label">Age Range Reference Guide</div>
+        <div class="decision-grid">
+          <div class="decision-cell">
+            <div class="cell-label">🧒 Ages 2–4 · Board Book / Picture Book</div>
+            <div style="font-size:13px;color:var(--text);line-height:1.7;">
+              <strong>Word count:</strong> 100–500 words<br>
+              <strong>Structure:</strong> Repetition, rhythm, rhyme<br>
+              <strong>Themes:</strong> Emotions, bedtime, animals, colors, counting<br>
+              <strong>Who buys it:</strong> Parents of toddlers, daycare, preschool
+            </div>
+          </div>
+          <div class="decision-cell">
+            <div class="cell-label">🎒 Ages 5–7 · Early Picture Book</div>
+            <div style="font-size:13px;color:var(--text);line-height:1.7;">
+              <strong>Word count:</strong> 500–1,000 words<br>
+              <strong>Structure:</strong> Simple arc, clear problem + solution<br>
+              <strong>Themes:</strong> School, friendship, fears, kindness, humor<br>
+              <strong>Who buys it:</strong> Kindergarten–Grade 1 parents, teachers
+            </div>
+          </div>
+          <div class="decision-cell">
+            <div class="cell-label">📚 Ages 8–10 · Chapter / Illustrated Story</div>
+            <div style="font-size:13px;color:var(--text);line-height:1.7;">
+              <strong>Word count:</strong> 1,000–10,000 words<br>
+              <strong>Structure:</strong> Chapters, more complex character growth<br>
+              <strong>Themes:</strong> Adventure, identity, problem-solving, values<br>
+              <strong>Who buys it:</strong> Parents of early readers, schools, libraries
+            </div>
+          </div>
+          <div class="decision-cell" style="border:1.5px dashed var(--purple); background:#faf0ff;">
+            <div class="cell-label">✏️ Your Selection</div>
+            <div class="cell-lines">
+              <div style="font-size:12px;color:var(--muted);margin-bottom:6px;">I am writing for ages:</div>
+              <div class="cell-line" data-label="e.g. Ages 5–7"></div>
+              <div style="font-size:12px;color:var(--muted);margin:8px 0 6px;">My reason:</div>
+              <div class="cell-line"></div>
+              <div class="cell-line"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rule-callout">
+          <span class="icon">⚠️</span>
+          <div><strong>Rule: You must pick ONE range only.</strong> Do not write "5–10" or "for all kids." This kills your book's marketability before you even start. A specific audience makes your concept stronger and your Amazon listing more findable.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────────────────────────────────── -->
+  <!-- ACTIVITY 2 -->
+  <!-- ────────────────────────────────────── -->
+  <div class="section-label">Activity 2 of 5</div>
+  <div class="activity-block">
+    <div class="activity-card">
+      <div class="activity-header">
+        <div class="activity-number a2">02</div>
+        <div class="activity-title-wrap">
+          <h3>Choose Your Category &amp; Hook</h3>
+          <p>Pick the shelf your book lives on — and the emotional reason a parent buys it</p>
+        </div>
+        <div class="time-badge"><span class="clock">⏱</span> 10 Min</div>
+      </div>
+      <div class="activity-body">
+
+        <div class="instruction-label">Why This Matters</div>
+        <div class="context-box blue">
+          Parents don't just browse. They search for a solution: "book about sharing for 5 year old," "funny bedtime book." Your category and hook are what make them click BUY. If you don't know what problem your book solves or what feeling it creates — you'll struggle to sell it.
+        </div>
+
+        <div class="instruction-label">Step-by-Step Instructions</div>
+        <ol class="step-list">
+          <li><span class="step-num">1</span><span>Review the four categories below and select ONE that fits your book best.</span></li>
+          <li><span class="step-num">2</span><span>Choose the emotional hook that matches — this is the reason a parent pulls out their wallet.</span></li>
+          <li><span class="step-num">3</span><span>Complete the fill-in section at the bottom.</span></li>
+        </ol>
+
+        <div class="instruction-label">Category + Hook Selector</div>
+        <table class="val-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>What It Does</th>
+              <th>Emotional Hook (Parent's Reason to Buy)</th>
+              <th>Demand Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>📖 Educational</strong></td>
+              <td>Teaches a concept — math, nature, alphabet, science</td>
+              <td>"This will help my child learn while having fun"</td>
+              <td><span class="signal green-sig">Very High</span></td>
+            </tr>
+            <tr>
+              <td><strong>🌙 Bedtime</strong></td>
+              <td>Calms, soothes, creates nighttime routine</td>
+              <td>"I need something that actually gets my kid to sleep"</td>
+              <td><span class="signal green-sig">High</span></td>
+            </tr>
+            <tr>
+              <td><strong>😂 Humor</strong></td>
+              <td>Makes kids laugh, builds read-aloud engagement</td>
+              <td>"My kid will love this — and so will I"</td>
+              <td><span class="signal yellow-sig">Moderate</span></td>
+            </tr>
+            <tr>
+              <td><strong>❤️ Values-Based</strong></td>
+              <td>Teaches kindness, courage, honesty, empathy</td>
+              <td>"This teaches my child something important"</td>
+              <td><span class="signal green-sig">High</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="instruction-label" style="margin-top:24px;">Your Selections</div>
+        <div class="fill-in">
+          <div class="prompt">Complete each line. Be specific — don't write "something educational." Write the exact lesson or feeling.</div>
+          <div class="fill-line" data-label="My category is: ___________"></div>
+          <div class="fill-line" data-label="The problem my book solves OR emotion it creates: ___________"></div>
+          <div class="fill-line" data-label="A parent would buy this book because: ___________"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────────────────────────────────── -->
+  <!-- ACTIVITY 3 -->
+  <!-- ────────────────────────────────────── -->
+  <div class="section-label">Activity 3 of 5</div>
+  <div class="activity-block">
+    <div class="activity-card">
+      <div class="activity-header">
+        <div class="activity-number a3">03</div>
+        <div class="activity-title-wrap">
+          <h3>Fast Amazon Demand Check</h3>
+          <p>Validate your idea in under 10 minutes using Amazon's own search data</p>
+        </div>
+        <div class="time-badge"><span class="clock">⏱</span> 10 Min</div>
+      </div>
+      <div class="activity-body">
+
+        <div class="instruction-label">Why This Matters</div>
+        <div class="context-box gold">
+          You don't need expensive market research tools. Amazon tells you exactly what's selling. If books like yours exist and are ranked — that's proof of demand, not competition to fear. If nothing like yours exists, that's a warning sign, not an opportunity.
+        </div>
+
+        <div class="instruction-label">Step-by-Step Instructions</div>
+        <ol class="step-list">
+          <li><span class="step-num">1</span><span>Go to <strong>Amazon.com</strong> and click the search bar. Set the department to <strong>Books</strong>.</span></li>
+          <li><span class="step-num">2</span><span>Type in a 3–5 word phrase describing your book idea. Example: <em>"courage book for kids"</em> or <em>"bedtime story ages 4."</em></span></li>
+          <li><span class="step-num">3</span><span>Look at the first 10 results. Count how many books closely match your topic.</span></li>
+          <li><span class="step-num">4</span><span>Click on 2–3 books. Check their <strong>Best Seller Rank (BSR)</strong> — found under "Product Details." Lower number = more sales.</span></li>
+          <li><span class="step-num">5</span><span>Look at the book covers, titles, and descriptions. Note what they're doing well — or what's missing that you could do better.</span></li>
+          <li><span class="step-num">6</span><span>Record your findings below.</span></li>
+        </ol>
+
+        <div class="instruction-label">BSR Quick Reference</div>
+        <table class="val-table">
+          <thead>
+            <tr><th>Best Seller Rank (BSR)</th><th>What It Means</th><th>Signal</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#1 – #10,000</td>
+              <td>Selling daily — strong demand in this niche</td>
+              <td><span class="signal green-sig">✅ Go</span></td>
+            </tr>
+            <tr>
+              <td>#10,001 – #100,000</td>
+              <td>Selling weekly — moderate but viable demand</td>
+              <td><span class="signal yellow-sig">⚠️ Proceed with twist</span></td>
+            </tr>
+            <tr>
+              <td>#100,001+</td>
+              <td>Selling rarely — low demand or oversaturated</td>
+              <td><span class="signal red-sig">❌ Reconsider</span></td>
+            </tr>
+            <tr>
+              <td>No results found</td>
+              <td>No market — pivot your topic immediately</td>
+              <td><span class="signal red-sig">❌ Pivot</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="instruction-label" style="margin-top:24px;">Your Amazon Research Notes</div>
+        <div class="fill-in">
+          <div class="fill-line" data-label="Search phrase I used: ___________"></div>
+          <div class="fill-line" data-label="Number of relevant results on page 1: ___________"></div>
+          <div class="fill-line" data-label="BSR of top result I found: ___________"></div>
+          <div class="fill-line" data-label="What the top books are doing well: ___________"></div>
+          <div class="fill-line" data-label="What's MISSING that I could do better: ___________"></div>
+          <div class="fill-line" data-label="Demand signal (Go / Proceed / Pivot): ___________"></div>
+        </div>
+
+        <div class="alert-strip">
+          <span class="icon">🚫</span>
+          <span><strong>Time limit is strict: 10 minutes maximum.</strong> Set a timer. Do not fall into a research rabbit hole. You are looking for a signal, not writing a market report. One search, 2–3 book checks, done.</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────────────────────────────────── -->
+  <!-- ACTIVITY 4 -->
+  <!-- ────────────────────────────────────── -->
+  <div class="section-label">Activity 4 of 5</div>
+  <div class="activity-block">
+    <div class="activity-card">
+      <div class="activity-header">
+        <div class="activity-number a4">04</div>
+        <div class="activity-title-wrap">
+          <h3>Cliché Filter — Pass or Pivot</h3>
+          <p>Stress-test your idea against the most oversaturated children's book topics</p>
+        </div>
+        <div class="time-badge"><span class="clock">⏱</span> 5 Min</div>
+      </div>
+      <div class="activity-body">
+
+        <div class="instruction-label">Why This Matters</div>
+        <div class="context-box pink">
+          Thousands of children's books about dinosaurs learning to share, unicorns being brave, and dragons who are different exist on Amazon right now. Most never sell. Your idea doesn't need to be 100% original — but it does need a distinguishing twist, angle, or perspective that sets it apart. If your idea is on the cliché list with no twist, change it now — before you spend 7 days creating it.
+        </div>
+
+        <div class="instruction-label">Oversaturated Topic Checklist</div>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">Check if your idea overlaps with any of these. If it does, you need a twist — or a pivot.</p>
+        <ul class="checklist">
+          <li><div class="check-box"></div> Generic "be yourself" or "you are special" message</li>
+          <li><div class="check-box"></div> Dinosaur learning an emotion (sharing, kindness, etc.)</li>
+          <li><div class="check-box"></div> Unicorn / magical creature overcoming a fear</li>
+          <li><div class="check-box"></div> Dragon who is "different from the others"</li>
+          <li><div class="check-box"></div> Generic ABC or 123 counting book (no niche or theme)</li>
+          <li><div class="check-box"></div> "First day of school" anxiety story (standard format)</li>
+          <li><div class="check-box"></div> "Monsters aren't real" bedtime reassurance story</li>
+          <li><div class="check-box"></div> Generic friendship story with animal characters</li>
+        </ul>
+
+        <div class="instruction-label" style="margin-top:24px;">Twist It or Drop It</div>
+        <div class="fill-in">
+          <div class="prompt">If your idea matches anything above, write your UNIQUE TWIST below. What makes yours completely different? (Specific setting? Unexpected character? Counter-intuitive lesson? Humor angle?)</div>
+          <div class="fill-line" data-label="My idea overlaps with: ___________"></div>
+          <div class="fill-line" data-label="My twist that makes it different: ___________"></div>
+          <div class="fill-line" data-label="After this filter, my idea is: (circle one) ORIGINAL / HAS A STRONG TWIST / NEEDS TO PIVOT"></div>
+        </div>
+
+        <div class="rule-callout">
+          <span class="icon">💡</span>
+          <div><strong>The Twist Rule:</strong> You don't need a brand new idea. You need a better angle on an existing idea. Example: Instead of "dinosaur learns to share" → "dinosaur who hates vegetables accidentally grows a garden and has to share it with the whole neighborhood." Same emotion, completely different hook.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────────────────────────────────── -->
+  <!-- ACTIVITY 5 -->
+  <!-- ────────────────────────────────────── -->
+  <div class="section-label">Activity 5 of 5</div>
+  <div class="activity-block">
+    <div class="activity-card">
+      <div class="activity-header">
+        <div class="activity-number a5">05</div>
+        <div class="activity-title-wrap">
+          <h3>Write Your 1–2 Sentence Concept Pitch</h3>
+          <p>Turn everything you've decided into one clear, marketable idea statement</p>
+        </div>
+        <div class="time-badge"><span class="clock">⏱</span> 10 Min</div>
+      </div>
+      <div class="activity-body">
+
+        <div class="instruction-label">Why This Matters</div>
+        <div class="context-box green">
+          Your concept pitch is the foundation of everything: your book title, your Amazon description, and how you explain your book to anyone. If you can't say what your book is in 1–2 sentences, your idea isn't clear enough yet. This is your final filter before moving to Day 2.
+        </div>
+
+        <div class="instruction-label">The Concept Pitch Formula</div>
+        <div class="pitch-builder">
+          <div class="pitch-formula">
+            <div class="formula-piece">[Main Character]</div>
+            <span class="formula-plus">+</span>
+            <div class="formula-piece">[Wants or Faces]</div>
+            <span class="formula-plus">+</span>
+            <div class="formula-piece">[Obstacle or Twist]</div>
+            <span class="formula-plus">+</span>
+            <div class="formula-piece">[Lesson or Outcome]</div>
+            <span class="formula-equals">=</span>
+            <div class="formula-piece" style="color:var(--navy);border-color:var(--gold);background:#FFF9F0;">Your Pitch</div>
+          </div>
+          <div class="pitch-lines">
+            <div class="pitch-line-wrap">
+              <label>Example Pitch 1 — Values-Based, Ages 4–6</label>
+              <div class="pitch-input-mock">A shy turtle who wants to join the school talent show discovers that asking for help isn't giving up — it's the bravest thing you can do.</div>
+            </div>
+            <div class="pitch-line-wrap">
+              <label>Example Pitch 2 — Educational, Ages 5–7</label>
+              <div class="pitch-input-mock">When Maya's science project goes hilariously wrong, she learns that every great discovery starts with a mistake — and a second try.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="instruction-label" style="margin-top:24px;">Write Your Concept Pitch</div>
+        <ol class="step-list" style="margin-bottom:16px;">
+          <li><span class="step-num">1</span><span>Use the formula above. Fill in the blanks from what you've decided in Activities 1–4.</span></li>
+          <li><span class="step-num">2</span><span>Write a rough version first, then refine it once.</span></li>
+          <li><span class="step-num">3</span><span>Read it out loud. If it takes more than 2 sentences, cut it down.</span></li>
+          <li><span class="step-num">4</span><span>Ask yourself: "Would I buy this book for a child I know?" If yes — you're done.</span></li>
+        </ol>
+        <div class="fill-in">
+          <div class="prompt">My Book Concept Pitch (1–2 sentences maximum):</div>
+          <div class="fill-line" style="height:48px;"></div>
+          <div class="fill-line" style="height:48px;margin-top:8px;"></div>
+          <div style="margin-top:16px;">
+            <div class="prompt">My target age group is: _____________ &nbsp;&nbsp; My category is: _____________</div>
+            <div class="fill-line"></div>
+          </div>
+        </div>
+
+        <div class="instruction-label" style="margin-top:24px;">Final Validation — 3-Question Test</div>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">Answer honestly. If you answer "No" to any of these, refine your pitch before moving on.</p>
+        <ul class="checklist">
+          <li><div class="check-box"></div> ✅ I can explain this book in 1–2 sentences without confusion</li>
+          <li><div class="check-box"></div> ✅ I know exactly who I'm writing this for (specific age range)</li>
+          <li><div class="check-box"></div> ✅ There is a clear reason a parent would buy this book</li>
+        </ul>
+
+        <div class="alert-strip" style="margin-top:20px;">
+          <span class="icon">🔒</span>
+          <span><strong>This is your locked concept.</strong> Once you complete this activity, your idea is set. You are not allowed to change it tomorrow. Changing your idea mid-course is the #1 reason people never finish. Commit and move forward.</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- DELIVERABLE -->
+  <div class="section-label">Module Deliverable</div>
+  <div class="deliverable-card">
+    <div class="deliverable-icon">🏆</div>
+    <div>
+      <h3>Day 1 Complete — Your Validated Book Concept</h3>
+      <p>You have successfully completed Module 1. Before moving to Day 2, confirm you have all five deliverables checked off. If any are missing, go back and complete that activity now. Do not move forward without a locked concept.</p>
+      <div class="deliverable-checks">
+        <span>Target age range selected and written down</span>
+        <span>Book category and emotional hook identified</span>
+        <span>Amazon demand validated — signal confirmed</span>
+        <span>Cliché filter passed — twist defined if needed</span>
+        <span>1–2 sentence concept pitch written and finalized</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:28px;padding:20px 24px;background:var(--white);border-radius:14px;border:1px solid var(--border);text-align:center;">
+    <div style="font-size:13px;color:var(--muted);margin-bottom:6px;">Up Next</div>
+    <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--navy);">Module 2 — Day 2: Story Structure That Actually Works</div>
+    <div style="font-size:13px;color:var(--muted);margin-top:6px;">You'll turn your locked concept into a complete page-by-page story outline in under 90 minutes.</div>
+  </div>
+
+</div><!-- /container -->
+</body>
+</html>
